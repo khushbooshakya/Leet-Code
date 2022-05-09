@@ -1,23 +1,40 @@
 class Solution {
 public:
-    void nextPermutation(vector<int>& nums) 
-    {
-        int n=nums.size();
-        int l,r;
-        for(l=n-2;l>=0;l--)                           // find decreasing sequence
-        {
-            if(nums[l]<nums[l+1]) break;
+    void nextPermutation(vector<int>& nums) {
+        
+        if(nums.size()==1){
+            return;
         }
-        if(l<0) reverse(nums.begin(),nums.end());
-        else
-        {
-            for(r=n-1;r>l;r--)                       // find rightmost successor to pivot
-            {
-                if(nums[r]>nums[l]) break;
+        
+        
+        int idx1;
+        for(int i=nums.size()-2;i>=0;i--){
+            if(nums[i]<nums[i+1]){
+                idx1=i;
+                break;
             }
-            swap(nums[l],nums[r]);                  // swap l,r
-            
-            reverse(nums.begin()+l+1,nums.end());   // reverse from l+1 to end
         }
+        
+        if(idx1<0){
+            reverse(nums.begin(),nums.end());
+        }else{
+            
+            int idx2=0;
+            for(int i=nums.size()-1;i>=0;i--){
+                if(nums[i]>nums[idx1]){
+                    idx2=i;
+                    break;
+                }
+            }
+        
+            swap(nums[idx1],nums[idx2]);
+            
+            sort(nums.begin()+idx1+1,nums.end());
+            
+            
+        }
+        
+        
+        
     }
 };
