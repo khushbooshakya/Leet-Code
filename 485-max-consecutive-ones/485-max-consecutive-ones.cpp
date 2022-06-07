@@ -10,9 +10,9 @@ public:
                 count++;
             }
             else{
-                count=0;
+                count=0; 
             }
-            // int maxi=count;
+        
             maxi= max(count,maxi);
         }
         return  maxi;
