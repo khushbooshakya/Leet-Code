@@ -1,15 +1,16 @@
 class Solution {
 public:
     int longestCommonSubsequence(string t1, string t2) {
-        int dp[t1.size()+1][t2.size()+1];
-        // vector<int> dp[t1.size()[t2.size()]= 0;
+        // int dp[t1.size()+1][t2.size()+1];
+        vector<vector<int>>dp(t1.size()+1,vector<int>(t2.size()+1,0));
+        dp[0][0]=0;
      
-for(int i=0;i<=t1.size();i++){
-            for(int j=0;j<=t2.size();j++){
-                if(i==0||j==0){
-                    dp[i][j]=0;
-                }
-            }}
+// for(int i=0;i<=t1.size();i++){
+//             for(int j=0;j<=t2.size();j++){
+//                 if(i==0||j==0){
+//                     dp[i][j]=0;
+//                 }
+//             }}
         
         for(int i=1;i<=t1.size();i++){
             for(int j=1;j<=t2.size();j++){
