@@ -1,36 +1,30 @@
 class Solution {
 public:
+    // int dp[102][102];
+    bool helper(string& s1, string& s2, string &s3, int l1, int l2, int l3, vector<vector<int>>&dp) {
+        if(l1<0 && l2<0 && l3<0) {
+            return true;
+        }
+        if(l1>=0 && l2>=0 && dp[l1][l2]!=-1) {
+            return dp[l1][l2];
+        }
+        if(l1>=0 && s1[l1]==s3[l3] && l2>=0 && s2[l2]==s3[l3] ) {
+            return dp[l1][l2] = (helper(s1, s2, s3, l1-1, l2, l3-1, dp) || helper(s1, s2, s3, l1, l2-1, l3-1, dp));
+        }
+        else if(l1>=0 && s1[l1]==s3[l3])
+            return helper(s1, s2, s3, l1-1, l2, l3-1, dp);
+        
+        else if(l2>=0 &&s2[l2]==s3[l3])
+            return helper(s1, s2, s3, l1, l2-1, l3-1, dp);
+        
+        else return false;
+    }
+    
     bool isInterleave(string s1, string s2, string s3) {
-        vector<vector<int>>dp(s1.size()+1,vector<int>(s2.size()+1));
-        dp[0][0]=1;
-        if(s1.size()+s2.size()!=s3.size())
-            return false;
-        for(int i=1;i<=s1.size();i++)
-        {
-            if(s1[i-1]==s3[i-1] &&dp[i-1][0]==1)
-            {
-                dp[i][0]=1;
-            }
-        }
-        dp[0][0]=1;
-        for(int j=1;j<=s2.size();j++)
-        {
-            if(s2[j-1]==s3[j-1] && dp[0][j-1]==1)
-            dp[0][j]=1;
-        }
-        for(int i=1;i<=s1.size();i++)
-        {
-            for(int j=1;j<=s2.size();j++)
-            {
-                if(dp[i-1][j]==1 && (s1[i-1]==s3[i+j-1]))
-                    dp[i][j]=1;
-                else if(dp[i][j-1]==1 && (s2[j-1]==s3[i+j-1]))
-                {
-                     dp[i][j]=1;
-                }
-                   
-            }
-        }
-        return dp[s1.size()][s2.size()];
+        if(s3.size() != s1.size() + s2.size())
+			return false;
+        vector<vector<int>>dp(s1.size()+1, (vector<int>(s2.size()+1, -1)));
+        // memset(dp, -1, sizeof(dp));
+        return helper(s1, s2, s3,s1.size()-1, s2.size()-1, s3.size()-1, dp);
     }
 };
