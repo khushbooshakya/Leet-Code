@@ -1,7 +1,6 @@
 # Number of occurrence
 ## Easy
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a sorted array <strong>Arr&nbsp;</strong>of size <strong>N </strong>and a number <strong>X</strong>, you need to find the number of occurrences of<strong> X</strong> in <strong>Arr</strong>.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a sorted array <strong>Arr&nbsp;</strong>of size <strong>N </strong>and a number <strong>X</strong>, you need to find the number of occurrences of<strong> X</strong> in <strong>Arr</strong>.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
@@ -22,7 +21,8 @@ Arr[] = {1, 1, 2, 2, 2, 2, 3}
 given array.</span></pre>
 
 <p><span style="font-size:18px"><strong>Your Task:</strong><br>
-You don't need to read input or print anything. Your task is to complete the function&nbsp;<strong>count()</strong>&nbsp;which takes the&nbsp;array of&nbsp;integers&nbsp;<strong>arr,</strong>&nbsp;<strong>n&nbsp;</strong>and<strong>&nbsp;x</strong><strong>&nbsp;</strong>as parameters and returns an integer denoting the answer.</span></p>
+You don't need to read input or print anything. Your task is to complete the function&nbsp;<strong>count()</strong>&nbsp;which takes the&nbsp;array of&nbsp;integers&nbsp;<strong>arr,</strong>&nbsp;<strong>n,&nbsp;</strong>and<strong>&nbsp;x</strong><strong>&nbsp;</strong>as parameters and returns an integer denoting the answer.<br>
+If x is not present in the array (arr) then return 0.</span></p>
 
 <p><span style="font-size:18px"><strong>Expected Time Complexity:</strong>&nbsp;O(logN)<br>
 <strong>Expected Auxiliary Space:</strong>&nbsp;O(1)</span></p>
@@ -33,5 +33,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 1 ≤ X ≤ 10<sup>6</sup></span></p>
 
 <p>&nbsp;</p>
- <p></p>
-            </div>
+</div>
