@@ -1,41 +1,27 @@
-// { Driver Code Starts
-
+//{ Driver Code Starts
 #include<bits/stdc++.h>
 
 using namespace std;
 
 
- // } Driver Code Ends
+// } Driver Code Ends
 //User function template for C++
 class Solution{
 public:	
 	/* if x is present in arr[] then returns the count
 		of occurrences of x, otherwise returns 0. */
 	int count(int arr[], int n, int x) {
-	    // code here
-	       int count=0;
-    int i;
-    for( i=0;i<n;i++)
-    {
-        if(arr[i]==x)
-        break;
+	    int c=0;
+for(int i =0;i<n;i++){
+    if(arr[i]==x){
+        c++;
     }
-    
-    for(int j=i;j<n;++j)
-    {
-        if(arr[j]==x)
-        count++;
-        else 
-        {
-        if(arr[j]>x)
-        break;
-        }
-    }
-    return count;
+}
+return c;
 	}
 };
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main() {
     int t;
@@ -53,4 +39,5 @@ int main() {
     }
     return 0;
 }
-  // } Driver Code Ends
+
+// } Driver Code Ends
